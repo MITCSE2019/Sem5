@@ -15,7 +15,7 @@ echo "content2" > xyz
 cp xyz ../sub2
 
 #(iv)
-echo -e "Users: `who| wc -l`\nFiles: `ls -l | grep "^-" | wc -l`" > number
+echo -e "Users: `who| wc -l`\nFiles: `ls -l | grep "^-" | wc -l`" > ../sub2/number
 
 #(v)
 ls -p | grep -v \ | grep -E "^[aA]"
