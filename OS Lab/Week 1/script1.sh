@@ -20,10 +20,10 @@ echo -e "Users: `who| wc -l`\nFiles: `ls -l | grep "^-" | wc -l`" > ../sub2/numb
 #(v)
 ls -p | grep -v \ | grep -E "^[aA]"
 
-#(v)
+#(vi)
 echo "No of files: `ls -l | grep "^-" | wc -l`"
 
-#(vi)
+#(vii)
 cat <<DELIMITER > hello.c
 #include <stdio.h>
 
