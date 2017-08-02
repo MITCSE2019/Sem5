@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "No of files: `ls| wc -l`"
+echo "No of files: `ls -p | grep -v / | wc -l`"
