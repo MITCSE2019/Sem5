@@ -1,4 +1,4 @@
-#Baap ka code!
+//Baap ka code!
 #include <stdio.h>
 #include <stdlib.h>
 struct adj
