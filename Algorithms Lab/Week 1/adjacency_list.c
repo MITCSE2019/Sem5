@@ -12,6 +12,7 @@ int main()
 	int i,j;
 	NODE ** graph;
 	scanf("%d",&v);
+	int adj_matrix[v][v];
 	graph = (NODE **) calloc(v+1,sizeof(NODE *));
 	for(i=0;i<v;i++)
 	{
@@ -24,7 +25,7 @@ int main()
 	{
 		scanf("%d",&e1);
 		scanf("%d",&e2);
-
+		adj_matrix[e1-1][e2-1]=1;
 		NODE * head = graph[e1-1];
 		while(head->next!=NULL)
 		{
@@ -51,6 +52,11 @@ int main()
 	}
 
 	for(i=0;i<v;i++)
+		for(j=0;j<v;j++)
+			if(adj_matrix[i][j]!=1)
+				adj_matrix[i][j]=0;
+
+	for(i=0;i<v;i++)
 	{
 		NODE * head = graph[i];
 		while(head!=NULL)
@@ -60,5 +66,12 @@ int main()
 			}
 		printf("NULL\n");
 	}
+
+	for(i=0;i<v;i++)
+		{
+			for(j=0;j<v;j++)
+				printf("%d ",adj_matrix[i][j]);
+			printf("\n");
+		}
 
 }
