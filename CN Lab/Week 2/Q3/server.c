@@ -4,7 +4,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 
-#define PORTNO 11138
+#define PORTNO 11130
 
 void main()
 {
