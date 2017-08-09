@@ -13,3 +13,6 @@ do
         echo $files>>"TOC.txt"
     fi
 done
+
+
+#contributed by Ayush Garg
