@@ -54,7 +54,7 @@ void main()
 	float s=0.0;
 	for(int i=0;i<n;i++)
 		s+=a[i];
-	if((s-(int)s)!=0.0)
+	if(((s/2)-(int)(s/2))!=0.0)
 		printf("Parition set not possible as sum is %f\n",s/2);
 	int p=1<<n;
 	for(int i=0;i<p/2;i++)
