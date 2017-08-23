@@ -7,7 +7,7 @@ void recurSum(int *arr,int n,int *ind,int i,int *sum,int *finalInd){
         for(int a=0;a<n;a++){
             t+=arr[a*n + ind[a]];
         }
-        if(*sum<t){
+        if(*sum>=t){
             *sum=t;
             //printf("Index\n");
             for(int b=0;b<n;b++){
@@ -55,6 +55,9 @@ int main(){
             scanf("%d",&costMat[i*n+j]);
         }
     }
+    for(int i=0;i<n;i++){
+        sum+=costMat[i*n+i];
+    }
     for(i=0;i<n;i++){
         for(j=0;j<n;j++){
             printf("%d ", costMat[i*n+j]);
@@ -66,5 +69,5 @@ int main(){
     for(i=0;i<n;i++){
         printf("%d ",finalInd[i]);
     }
-    printf("\nGreatest Sum is: %d\n",sum);
+    printf("\nLeast Sum is: %d\n",sum);
 }
