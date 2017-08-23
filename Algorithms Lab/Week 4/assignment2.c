@@ -1,53 +1,67 @@
-//credits - Gaali Sai Sri Nithish
-#include <stdio.h>
 #include <stdlib.h>
-int arr1[125][125];
-int max=100000;
- 
-void swap(int *a,int *b)
+#include <stdio.h>
+
+int c=0;
+int arr[100][100];
+int min=10000;
+char answer[100];
+int size=0;
+void swap(char *x, char *y)
 {
-    int temp;
-    temp = *a;
-    *a = *b;
-    *b = temp;
+    char temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
 }
-void permu(int arr[],int n,int left,int right)
+void permute(char *a, int l, int r)
 {
-int i,j;
-if(left==right){
-    int sum=0;
-    for(j=0;j<n;j++){
-   sum = sum + arr1[j][arr[j]];
+   int i;
+   if (l == r)
+   {
+     int sum=0;
+     for(int i=0;i<size;i+=1)
+     {
+       int n1=a[i]-48;
+       sum+=arr[i][n1];
+     }
+     if(sum<min)
+     {
+       min=sum;
+       strcpy(answer,a);
+     }
 }
-if(max>sum){
-    max = sum;
-}
- 
-}  
-for(i=left;i<=right;i++)
-{
-  swap(&arr[i],&arr[left]);
-  permu(arr,n,left+1,right);
-  swap(&arr[left],&arr[i]);  
-}
+   else
+   {
+       for (i = l; i <= r; i++)
+       {
+          swap((a+l), (a+i));
+          permute(a, l+1, r);
+          swap((a+l), (a+i));
+       }
+   }
 }
 int main()
-{ int arr[1000];
-    int n,i=0,left=0,j;
-    printf("enter the size \n");
-    scanf("%d",&n);
-    int right = n-1;
-    for(i=0;i<n;i++)
+{
+    printf("Enter the size\n");
+    scanf("%d",&size);
+    for(int i=0;i<=size-1;i+=1)
     {
-         for(j=0;j<n;j++)
-         {
-            scanf("%d",&arr1[i][j]);
-         }
+      for(int j=0;j<=size-1;j+=1)
+      {
+        scanf("%d",&arr[i][j]);
+      }
     }
-    for(i=0;i<n;i++)
+    char str[100];
+    for(int i=0;i<size;i+=1)
     {
-     arr[i] = i;
+      str[i]=(i+48);
     }
-    permu(arr,n,left,right);
-  printf("%d",max);
+    int n = strlen(str);
+    permute(str, 0, n-1);
+      printf("%d is the minimum cost\n",min);//minimum cost
+    for(int i=0;i<size;i+=1)
+    {
+      printf("%d gets job  %c\n",i+1,answer[i] + 1);
+    }
+    return 0;
 }
