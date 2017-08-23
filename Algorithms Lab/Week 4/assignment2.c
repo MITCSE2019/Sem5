@@ -1,3 +1,4 @@
+//credits - Gaali Sai Sri Nithish
 #include <stdio.h>
 #include <stdlib.h>
 int arr1[125][125];
