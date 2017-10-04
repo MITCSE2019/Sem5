@@ -22,7 +22,7 @@ int main()
 {
     int key;
     int choice;
-    printf("Creation of B tree for M=%d\n",M);
+    printf("Creation of 2-3 tree for M=%d\n",M);
     int x;
     printf("Enter values (-1 to end)\n");
     while(1)
@@ -33,10 +33,8 @@ int main()
         insert(x);
     }
 
-    printf("Btree is :\n");
+    printf("2-3tree is :\n");
     display(root,0);
-    // printf("Btree in sorted order is:\n");
-    // inorder(root); putchar('\n');
     return 0;
 }
 
@@ -153,17 +151,3 @@ int searchPos(int key, int *key_arr, int n)
         pos++;
     return pos;
 }
-
-// void inorder(struct node *ptr) {
-//     if (ptr) {
-//         if (ptr->n >= 1) {
-//             inorder(ptr->p[0]);
-//             printf("%d ", ptr->keys[0]);
-//             inorder(ptr->p[1]);
-//             if (ptr->n == 2) {
-//                 printf("%d ", ptr->keys[1]);
-//                 inorder(ptr->p[2]);
-//             }
-//         }
-//     }
-// }
