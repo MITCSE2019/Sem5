@@ -12,10 +12,13 @@ void main()
     {
         scanf( "%d", &a[i] );
     }
+    printf( "Head starts at %d ", start );
+    printf( " \nHead moves to %d", a[0] );
     for ( i = 1; i < n; i++ )
     {
         mov += abs( a[i - 1] - a[i] );
+        printf( " \nHead moves to %d", a[i] );
     }
     mov+= abs( start - a[0] );
-    printf( "The total head movement is : %d\n", mov );
+    printf( "\nThe total head movement is : %d tracks\n", mov );
 }
