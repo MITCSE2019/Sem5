@@ -12,6 +12,7 @@ void main()
     {
         scanf( "%d", &a[i] );
     }
+    printf( "Head starts at %d ", start );
     while ( k < n )
     {
         for ( i = 0; i < n; i++ )
@@ -27,6 +28,7 @@ void main()
         k++;
         min = 1000;
         cur = a[index];
+        printf( " \nHead moves to %d", cur );
     }
-    printf( "The total head movement is : %d\n", mov );
+    printf( "\nThe total head movement is : %d tracks\n", mov );
 }
