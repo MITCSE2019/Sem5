@@ -8,12 +8,10 @@ void main()
     printf( "Enter request size\n" );
     scanf( "%d", &n );
     printf( "Enter requests" );
+    
     for ( i = 0; i < n; i++ )
     {
         scanf( "%d", &a[i] );
-    }
-    for ( i = 0; i < n; i++ )
-    {
         if ( a[i] < start )
         {
             b[k++] = a[i];
@@ -23,6 +21,7 @@ void main()
             c[l++] = a[i];
         }
     }
+    
     b[k++] = 0;
     for ( i = 0; i < k - 1; i++ )
     {
