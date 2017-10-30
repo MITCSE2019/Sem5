@@ -20,7 +20,7 @@ void sort ( int a[], int n )
 }
 void main()
 {
-    int a[20], b[20], c[20], l, i, n, mov = 0, k, cur = start;
+    int a[20], b[20], c[20], l = 0, i, n, mov = 0, k = 0, cur = start;
     printf( "Enter request size\n" );
     scanf( "%d", &n );
     printf( "Enter requests" );
